@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Budget Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>Student Budget Buddy</h2>
+    </header>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#addexpense">Add expense</a>
+        <a href="#history">Expense history</a>
+    </nav>
+
+    <main>
+        <section id="overview">
+
+            <h4>YOUR MONEY, MADE SIMPLE</h4>
+            <h1>Spend Wisely. Save Steadily</h1>
+            <p>A simple space to track your student allowance, manage daily expenses and work towards your savings
+                goals.</p><br>
+
+            <fieldset>
+                <h4>Monthly Budget</h4>
+                <h2 id="monthlyBudget">₹5,000</h2>
+                <p>Your spending limit</p>
+            </fieldset>
+
+            <fieldset>
+                <h4>Total Spent</h4>
+                <h2 id="totalSpent">₹1,050</h2>
+                <p id="spentPercentage">21% of your budget</p>
+            </fieldset>
+
+            <fieldset>
+                <h4>Money Remaining</h4>
+                <h2 id="moneyRemaining">₹3,950</h2>
+                <p>Keep an eye on your balance</p>
+            </fieldset>
+
+        </section><br><br>
+
+        <section id="addexpense">
+
+            <fieldset>
+
+                <h2>Add an Expense</h2>
+                <p>Record what you spend so nothing get forgotten.</p>
+
+                <form id="expenseForm">
+
+                    <label for="expensename">Expense Name</label><br>
+                    <input type="text" id="expensename"
+                        placeholder="e.g. Lunch at the campus cafe" required><br><br>
+
+                    <label for="amount">Amount (₹)</label><br>
+                    <input type="number" id="amount"
+                        placeholder="e.g. 120" min="1" step="0.01" required><br><br>
+
+                    <label for="category">Category</label><br>
+
+                    <select name="category" id="category" required>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Study">Study</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+
+                    <button type="submit">+ Add Expense</button>
+
+                </form>
+            </fieldset>
+        </section>
+
+        <section id="budgetProgress">
+            <fieldset>
+                <h2>Monthly Budget Progress</h2>
+
+                <p id="spentProgressText">₹1,050 spent</p>
+
+                <progress id="budgetProgressBar" value="21" max="100"></progress>
+
+                <p id="progressPercentage">21%</p>
+
+                <form id="budgetForm">
+                    <label for="budget">Change Monthly Budget (₹)</label><br>
+
+                    <input type="number" id="budget"
+                        name="budget" value="5000" min="1" required>
+
+                    <br><br>
+
+                    <button type="submit">Update Budget</button>
+                </form>
+
+            </fieldset>
+        </section>
+
+        <section id="history">
+            <fieldset>
+                <h2>Recent Expenses</h2>
+                <p>Your latest spending, all in one place.</p>
+
+                <div id="expenseList"></div>
+
+                <article>
+                    <h3>Campus Lunch</h3>
+                    <p>Food · Sample expense</p>
+                    <p>-₹180</p>
+                </article>
+                <hr>
+
+                <article>
+                    <h3>Bus Fare</h3>
+                    <p>Travel · Sample expense</p>
+                    <p>-₹70</p>
+                </article>
+                <hr>
+
+                <article>
+                    <h3>Notebook</h3>
+                    <p>Study · Sample expense</p>
+                    <p>-₹120</p>
+                </article>
+                <hr>
+
+                <article>
+                    <h3>Movie with Friends</h3>
+                    <p>Entertainment · Sample expense</p>
+                    <p>-₹250</p>
+                </article>
+                <hr>
+
+                <article>
+                    <h3>Snacks</h3>
+                    <p>Food · Sample expense</p>
+                    <p>-₹430</p>
+                </article>
+
+            </fieldset>
+        </section>
+
+        <aside>
+            <fieldset>
+                <h3>💡 Buddy Tip</h3>
+                <p>Try setting aside a small amount whenever you receive your allowance. Saving a little regularly is
+                    easier than saving a lot at the end of the month.</p>
+            </fieldset>
+        </aside>
+
+    </main><br>
+
+    <footer>
+        <p>Student Budget Buddy · A student-friendly budgeting demo</p>
+        <p>&copy; 2026 Student Budget Buddy</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
