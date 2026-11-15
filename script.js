@@ -1,5 +1,5 @@
 let monthlyBudget = 5000;
-let totalSpent = 1050;
+let totalSpent = 0;
 
 // Store new expenses
 let expenses = [];
@@ -135,7 +135,3 @@ budgetForm.addEventListener("submit", function(event) {
 
 // Show correct values when the page opens
 updateBudget();
-
-
-
-
