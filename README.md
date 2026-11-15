@@ -1,6 +1,6 @@
 # 💰 Student Budget Buddy
 
-A simple and student-friendly website to manage monthly budgets and track daily expenses.
+A student budgeting app to track expenses and manage savings.
 
 ## 📌 About the Project
 
