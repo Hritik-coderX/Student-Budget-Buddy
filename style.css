@@ -1,5 +1,5 @@
 /* Basic Box Styling */
-    * {
+* {
     box-sizing: border-box;
 }
 
@@ -14,37 +14,48 @@ body {
 /* Header and navigation */
 header {
     background-color: #ffffff;
-    padding: 14px 20px 6px;
-    border-bottom: 1px solid #e8ece9;
+    padding: 20px 20px 5px;
+    text-align: center; /* Naam ko center mein laane ke liye */
 }
 
 header h2 {
-    margin: 0;
-    color: #173e32;
-    font-size: 20px;
+    margin: 0 ;
+    color: #178550;
+    font-size: 30px; /* Heading thodi badi aur bold ki hai */
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 nav {
     display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding: 10px 20px;
+    justify-content: center; /* Menu links ko center mein rakhne ke liye */
+    gap: 15px;
+    padding: 15px 15px;
     background-color: #ffffff;
     border-bottom: 1px solid #e8ece9;
+    position: sticky; /* Niche scroll karne par menu upar fix rahega */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px -6px rgba(0, 0, 0, 0.1); /* Halka sa shadow */
 }
 
 nav a {
     color: #69736e;
     font-size: 14px;
+    font-weight: bold;
     text-decoration: none;
     white-space: nowrap;
+    padding: 8px 18px; /* Button jaisi spacing */
+    border-radius: 20px; /* Gol kinare */
+    transition: all 0.3s ease; /* Smooth effect ke liye */
 }
 
 nav a:hover {
-    color: #23624d;
+    background-color: #eaf1ed; /* Hover karne par halka hara background */
+    color: #218052;
 }
 
-/* Main content stays narrow like the reference image */
+/* Main content */
 main {
     width: 100%;
     max-width: 700px;
@@ -154,10 +165,12 @@ button {
     font: inherit;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #194d3c;
+    transform: scale(1.02);
 }
 
 progress {
@@ -167,37 +180,51 @@ progress {
 }
 
 /* Recent expense list */
+/* Recent expense list */
 #history article {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2px 12px;
-    padding: 8px 0;
+    display: grid;
+    grid-template-columns: 1fr auto; /* Text left mein, Amount right mein */
+    gap: 4px 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background-color: #fcfdfc;
+    border: 1px solid #edf0ed;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#history article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 55, 43, 0.08); /* Hover par card uthega */
+    background-color: #ffffff;
 }
 
 #history article h3 {
-    width: calc(100% - 90px);
+    grid-column: 1;
     margin: 0;
-    font-size: 15px;
+    font-size: 16px;
+    color: #262b29;
 }
 
 #history article p {
+    grid-column: 1;
     margin: 0;
     color: #747c78;
-    font-size: 12px;
+    font-size: 13px;
 }
 
+/* Amount styling */
 #history article p:last-child {
-    color: #262b29;
-    font-size: 14px;
-    font-weight: bold;
+    grid-column: 2;
+    grid-row: 1 / span 2; /* Amount ko right side center mein fix karega */
+    align-self: center;
+    color: #d94242; /* Kharcha red color mein attractive lagega */
+    font-size: 16px;
+    font-weight: 800;
 }
 
 hr {
-    margin: 0;
-    border: 0;
-    border-top: 1px solid #edf0ed;
+    display: none; 
 }
 
 /* Tip and footer */
@@ -251,4 +278,19 @@ footer p {
     #overview fieldset {
         align-self: start;
     }
+}
+
+/* Card Hover Effect */
+fieldset {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+fieldset:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(30, 55, 43, 0.15);
+}
+
+/* Progress bar ko smooth banana */
+progress::-webkit-progress-value {
+    transition: width 0.5s ease-in-out;
 }
